@@ -13,6 +13,5 @@ RUN apt-get update -y && \
     apt-get install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api -y && \
     apt-get clean all
 
-RUN sed -i "s|#auto_accept: False|auto_accept: True|g" /etc/salt/master
 
 ENTRYPOINT ["salt-master", "-l", "debug"]
